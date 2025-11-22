@@ -1,0 +1,247 @@
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --muted: #555555;
+  --hover-bg: #e6f7ff; /* light blue glow */
+  --hover-shadow: rgba(0, 191, 255, 0.5);
+  --gap: 1.1rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Cutive Mono', monospace;
+  line-height: 1.4;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* disables horizontal scroll */
+}
+
+.site-nav {
+  font-family: 'Work Sans', sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.nav-home {
+  margin-right: auto;
+}
+
+.nav-home a {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 300;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00bfff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* Hidden menu on scroll */
+.scrolled .nav-links {
+  display: none;
+}
+
+.scrolled .hamburger {
+  display: flex;
+}
+
+/* Toggle menu when clicked */
+.menu-open .nav-links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 2rem;
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.container {
+  width: min(100%, 1300px);
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 1rem 0 1.5rem;
+  text-align: left;
+}
+
+.site-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300; /* Light */
+  transform: scaleX(1.07);
+  font-size: clamp(3rem, 10vw, 7.5rem); /* scales from small to large screens */
+  line-height: 1.1em;
+  margin: 0 4.45rem 0.25rem;
+  color: #000000;
+  letter-spacing: -0.08em;
+  display: block;
+  
+}
+
+.site-subtitle {
+	font-family: 'Work Sans', sans-serif;
+	font-size: clamp(1rem, 4vw, 1.25rem);
+	font-weight: 300; /* Light */
+	text-align: left; /* or left/right/justify as needed */
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: dense;
+  gap: var(--gap);
+
+  box-sizing: border-box;
+}
+
+/* Tile base styles */
+.tile {
+  position: relative;
+  border: 2px solid #000;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Image fills fixed area, stays uniform */
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect: lift + scale + color */
+.tile:hover {
+  transform: translate(2px, -2px); /* move diagonally up-right */
+  background-color: #00bfff;       /* solid blue fill */
+  box-shadow: -2px 2px 0 #000;     /* solid black shadow */
+}
+
+.tile:hover img {
+  filter: grayscale(0%);
+}
+
+/* Info overlay hidden by default */
+.tile-info {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--fg);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Reveal overlay on hover */
+.tile:hover .tile-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tile-info h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.tile-info p {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: var(--fg);
+}
+
+/* Tile sizes */
+.tile-1x1 { grid-column: span 1; grid-row: span 1; aspect-ratio: 1 / 1; }
+.tile-2x1 { grid-column: span 2; aspect-ratio: 2 / 1; }
+.tile-1x2 { grid-column: span 1; grid-row: span 2; aspect-ratio: 1 / 2; }
+.tile-2x2 { grid-column: span 2; grid-row: span 2; aspect-ratio: 1 / 1; }
+
+/* Responsive: single column on small screens */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .tile-1x1,
+  .tile-2x1,
+  .tile-1x2,
+  .tile-2x2 {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Footer */
+.site-footer {
+  padding: 1.5rem 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid #ddd;
+  margin-top: 1.5rem;
+}

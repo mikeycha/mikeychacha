@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transhumans-inspired Collection</title>
+  
+  <!-- Cutive Mono font -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<header class="site-header">
+  <nav class="site-nav">
+    <!-- Home link always visible on the left -->
+    <div class="nav-home">
+      <a href="index.html">Home</a>
+    </div>
+
+    <!-- Hamburger toggle on the right -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Collapsible menu links -->
+    <ul class="nav-links">
+      <li><a href="about.html">Instagram</a></li>
+      <li><a href="shop.html">Spotify</a></li>
+      <li><a href="color.html">VSCO</a></li>
+      <li><a href="cc0.html">Letterboxd</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.site-nav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  function toggleMenu() {
+    document.querySelector('.site-nav').classList.toggle('menu-open');
+  }
+</script>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Mikey Cha Cha</h1>
+      <p class="site-subtitle">1999 10 03</p>
+      <p class="site-description">
+        
+      </p>
+    </div>
+  </header>
+  
+
+  <main class="gallery container">
+    <!-- Example tiles -->
+	
+	<a href="page2.html" class="tile tile-1x1">
+      <img src="images02.png">
+      <div class="tile-info">
+        <h3>Project Two</h3>
+        <p>Another description goes here.</p>
+      </div>
+    </a>
+	
+	<a href="page2.html" class="tile tile-1x2">
+      <img src="images02.png">
+      <div class="tile-info">
+        <h3>Project Two</h3>
+        <p>Another description goes here.</p>
+      </div>
+    </a>
+	
+	<a href="page2.html" class="tile tile-1x1">
+      <img src="images02.png">
+      <div class="tile-info">
+        <h3>Project Two</h3>
+        <p>Another description goes here.</p>
+      </div>
+    </a>
+	
+    <a href="page1.html" class="tile tile-1x1">
+      <img src="images/01.jpg">
+      <div class="tile-info">
+        <h3>Project One</h3>
+        <p>Short description of this project.</p>
+      </div>
+    </a>
+
+    <a href="page2.html" class="tile tile-2x1">
+      <img src="images02.png">
+      <div class="tile-info">
+        <h3>Project Two</h3>
+        <p>Another description goes here.</p>
+      </div>
+    </a>
+	
+	<a href="page2.html" class="tile tile-2x2">
+      <img src="images02.png">
+      <div class="tile-info">
+        <h3>Project Two</h3>
+        <p>Another description goes here.</p>
+      </div>
+    </a>
+	
+	<a href="page2.html" class="tile tile-1x1">
+      <img src="images02.png">
+      <div class="tile-info">
+        <h3>Project Two</h3>
+        <p>Another description goes here.</p>
+      </div>
+    </a>
+	
+	<a href="page2.html" class="tile tile-1x1">
+      <img src="images02.png">
+      <div class="tile-info">
+        <h3>Project Two</h3>
+        <p>Another description goes here.</p>
+      </div>
+    </a>
+	
+	<a href="page2.html" class="tile tile-1x2">
+      <img src="images02.png">
+      <div class="tile-info">
+        <h3>Project Two</h3>
+        <p>Another description goes here.</p>
+      </div>
+    </a>
+
+    <!-- Add as many tiles as you want -->
+  </main>
+
+  <footer class="site-footer container">
+    <p>Digital Footprint</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<header class="site-header">
+  <nav class="site-nav">
+    <!-- Home link always visible on the left -->
+    <div class="nav-home">
+      <a href="index.html">Home</a>
+    </div>
+
+    <!-- Hamburger toggle on the right -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Collapsible menu links -->
+    <ul class="nav-links">
+      <li><a href="about.html">Instagram</a></li>
+      <li><a href="shop.html">Spotify</a></li>
+      <li><a href="color.html">VSCO</a></li>
+      <li><a href="cc0.html">Letterboxd</a></li>
+    </ul>
+  </nav>
+</header>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transhumanist Vision</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  
+    .feature-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .feature-image {
+      flex: 1 1 500px;
+	  max-width: 750px;    
+      aspect-ratio: 1 / 1;
+      border: 2px solid #000;
+      border-radius: 12px;
+      overflow: hidden;
+	  position: relative;
+	  background: #fff;
+	  text-decoration: none;
+	  color: inherit;
+	  display: block;
+	  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-image img {
+      width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  display: block;
+	  filter: grayscale(0%);
+	  transition: transform 0.3s ease, filter 0.3s ease;
+    }
+	
+	.feature-image:hover {
+	  transform: translate(2px, -2px); /* move diagonally up-right */
+	  background-color: #00bfff;       /* solid blue fill */
+	  box-shadow: -2px 2px 0 #000;     /* solid black shadow */
+	}
+
+	.container {
+	  box-sizing: border-box;
+	  width: min(100%, 1450px);
+	}
+	
+    .feature-text {
+      flex: 1;
+      max-width: 500px;
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    .feature-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .feature-text p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-buttons a {
+      display: inline-block;
+      margin-right: 1rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .feature-buttons .buy {
+      background-color: #00bfff;
+      color: white;
+    }
+
+    .feature-buttons .download {
+      color: #000;
+    }
+
+@media (max-width: 768px) {
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .feature-section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+  </style>
+</head>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.site-nav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  function toggleMenu() {
+    document.querySelector('.site-nav').classList.toggle('menu-open');
+  }
+</script>
+
+<body>
+
+  <main class="container">
+    <section class="feature-section">
+      <div class="feature-image">
+        <img src="images/transhuman-runner.png">
+      </div>
+      <div class="feature-text">
+        <h2>Boundless Futures</h2>
+        <p>
+  Oh Mr. Sandman, don’t come tonight,<br>
+  Your silver dust steals all of my light.<br>
+  You paint their smile, their touch, their face,<br>
+  Then morning comes, wiping away their trace.<br><br>
+
+  You weave such warmth, such tender bliss,<br>
+  Each dream a ghost of what I miss.<br>
+  Your lullabies just break my heart,<br>
+  They let me hold what falls apart.<br><br>
+
+  Oh Mr. Sandman, spare me please,<br>
+  No more illusions, no more soft tease.<br>
+  Your sweetest art cuts far too deep,<br>
+  Let empty peace cradle my sleep.<br><br>
+  
+  You weave such warmth, such tender bliss,<br>
+  Each dream a ghost of what I miss.<br>
+  Your lullabies just break my heart,<br>
+  They let me hold what falls apart.<br><br>
+
+  Oh Mr. Sandman, spare me please,<br>
+  No more illusions, no more soft tease.<br>
+  Your sweetest art cuts far too deep,<br>
+  Let empty peace cradle my sleep.<br><br>
+  
+  You weave such warmth, such tender bliss,<br>
+  Each dream a ghost of what I miss.<br>
+  Your lullabies just break my heart,<br>
+  They let me hold what falls apart.<br><br>
+
+  Oh Mr. Sandman, spare me please,<br>
+  No more illusions, no more soft tease.<br>
+  Your sweetest art cuts far too deep,<br>
+  Let empty peace cradle my sleep.<br><br>
+
+  So take your moonlight, hush your tune,<br>
+  No midnight gift, no fading bloom.<br>
+  For every dream you send my way,<br>
+  Just leaves me lonelier come day.
+</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>Digital Footprint</p>
+  </footer>
+</body>
+
+</html>
