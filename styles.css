@@ -178,11 +178,13 @@ html, body {
 .tile:hover {
   transform: translate(2px, -2px); /* move diagonally up-right */
   background-color: #00bfff;       /* solid blue fill */
-  box-shadow: -2px 2px 0 #000;     /* solid black shadow */
+  box-shadow: -3px 3px 0 #000;     /* solid black shadow */
 }
 
-.tile:hover img {
-  filter: grayscale(0%);
+.tile:active {
+  transform: translate(-2px, 2px); /* move further up-right */
+  background-color: #4dd2ff;       /* slightly darker blue */
+  box-shadow: 3px -3px 0 #000;     /* deeper shadow */
 }
 
 /* Info overlay hidden by default */
