@@ -116,9 +116,11 @@ html, body {
 }
 
 .container {
-  width: min(100%, 1300px);
-  padding: 0 2rem;
+  max-width: 1300px;      /* content max width */
+  width: 100%;            /* fill available space */
+  padding: 0 2rem;        /* side padding */
   margin: 0 auto;
+  box-sizing: border-box; /* padding stays inside width */
 }
 
 .site-header {
@@ -129,14 +131,14 @@ html, body {
 .site-title {
   font-family: 'Work Sans', sans-serif;
   font-weight: 300; /* Light */
-  transform: scaleX(1.07);
+  /* transform: scaleX(1.07); */
   font-size: clamp(3rem, 10vw, 7.5rem); /* scales from small to large screens */
   line-height: 1.1em;
-  margin: 0 4.45rem 0.25rem;
+  margin: 0 0 0.25rem; /* no left/right margin */
   color: #000000;
   letter-spacing: -0.08em;
   display: block;
-  
+  white-space: nowrap;
 }
 
 .site-subtitle {
@@ -152,7 +154,6 @@ html, body {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: dense;
   gap: var(--gap);
-
   box-sizing: border-box;
 }
 
@@ -199,6 +200,7 @@ html, body {
 
 /* Info overlay hidden by default */
 .tile-info {
+  font-family: 'Work Sans', sans-serif;
   position: absolute;
   bottom: 0.5rem;
   left: 0.5rem;
@@ -209,6 +211,17 @@ html, body {
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tile-info .p1 {
+  font-family: 'Work Sans', sans-serif; /* same as your title */
+  letter-spacing: 0.03em;
+  font-weight: 590;
+  font-size: 1.2rem;
+}
+
+.tile-info .p2 {
+  font-weight: 300;
 }
 
 /* Reveal overlay on hover */

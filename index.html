@@ -69,27 +69,24 @@
 </script>
 
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">Mikey Cha Cha</h1>
-      <p class="site-subtitle">1999 10 03</p>
-      <p class="site-description">
-        
-      </p>
-    </div>
-  </header>
-  
 
-  <main class="gallery container">
+  <div class="container">
+	<header class="site-header">
+		<h1 class="site-title">Mikey Cha Cha</h1>
+		<p class="site-subtitle">1999 10 03</p>
+		<p class="site-description"></p>
+	</header>
+
+	<main class="gallery">
     <!-- Example tiles -->
 	
 	<a href="page2.html" class="tile tile-1x1">
-      <img src="images02.png">
-      <div class="tile-info">
-        <h3>Project Two</h3>
-        <p>Another description goes here.</p>
-      </div>
-    </a>
+		<img src="images02.png" alt="Project image">
+		<div class="tile-info">
+		  <p class="p1">Eternal Sunshine</p>
+		  <p class="p2">2023-10-03</p>
+	    </div>
+	</a>
 	
 	<a href="page2.html" class="tile tile-1x2">
       <img src="images02.png">
@@ -156,10 +153,36 @@
     </a>
 
     <!-- Add as many tiles as you want -->
-  </main>
-
+	</main>
+  </div>
   <footer class="site-footer container">
     <p>Digital Footprint</p>
   </footer>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tiles = document.querySelectorAll(".tile");
+
+    function enableMobileScrollEffect() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");   // add effect when visible
+          } else {
+            entry.target.classList.remove("active"); // remove when scrolled away
+          }
+        });
+      }, { threshold: 0.5 }); // tile must be at least 50% visible
+
+      tiles.forEach(tile => observer.observe(tile));
+    }
+
+    // Only enable when screen is <= 768px
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      enableMobileScrollEffect();
+    }
+  });
+</script>
+
 </body>
 </html>
