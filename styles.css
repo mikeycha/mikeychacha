@@ -21,6 +21,16 @@ html, body {
   overflow-x: hidden; /* disables horizontal scroll */
 }
 
+.nav-links img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.nav-links a:hover img {
+  transform: scale(1.2);
+}
+
 .site-nav {
   font-family: 'Work Sans', sans-serif;
   position: fixed;
